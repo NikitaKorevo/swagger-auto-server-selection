@@ -21,8 +21,19 @@ const main = () => {
   }
 };
 
+const init = () => {
+  const mutationObserver1 = new MutationObserver(() => {
+    const selectElement = document.getElementById('servers');
+
+    if (selectElement) {
+      main();
+      mutationObserver1.disconnect();
+    }
+  });
+
+  mutationObserver1.observe(swaggerUIElement, { childList: true, subtree: true });
+};
+
 if (swaggerUIElement) {
-  setTimeout(() => {
-    main();
-  }, 4000);
+  init();
 }
