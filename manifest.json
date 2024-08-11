@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Swagger auto server selection",
-  "description": "Swagger auto server selection",
+  "description": "Swagger auto server selection by hostname",
   "version": "0.0.1",
   "content_scripts": [
     {
