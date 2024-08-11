@@ -3,6 +3,14 @@
   "name": "Swagger auto server selection",
   "description": "Swagger auto server selection by hostname",
   "version": "0.0.1",
+  "action": {
+    "default_icon": {
+      "128": "/static/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "/static/icon128.png"
+  },
   "content_scripts": [
     {
       "js": ["/content.js"],
