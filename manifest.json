@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Swagger Auto Server Selection",
   "description": "Swagger Auto Server Selection by hostname",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "action": {
     "default_icon": {
       "128": "/static/icon128.png"
