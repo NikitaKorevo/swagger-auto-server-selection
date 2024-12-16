@@ -16,5 +16,10 @@
       "js": ["/content.js"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "2ead08232595e66f0a737e138ab2aa013a957c84@addon"
+    }
+  }
 }
