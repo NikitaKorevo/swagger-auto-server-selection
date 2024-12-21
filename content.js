@@ -7,8 +7,7 @@ const getHostByUrl = url => {
   return a.host;
 };
 
-const main = () => {
-  const selectElement = document.getElementById('servers');
+const main = selectElement => {
   const currentHost = window.location.host;
   const selectUrls = [...selectElement.options].map(({ value }) => value);
   const value = selectUrls.find(url => getHostByUrl(url) === currentHost);
@@ -22,16 +21,16 @@ const main = () => {
 };
 
 const init = () => {
-  const mutationObserver1 = new MutationObserver(() => {
-    const selectElement = document.getElementById('servers');
+  const mutationObserver = new MutationObserver(() => {
+    const selectElement = document.querySelector('.servers select');
 
     if (selectElement) {
-      main();
-      mutationObserver1.disconnect();
+      main(selectElement);
+      mutationObserver.disconnect();
     }
   });
 
-  mutationObserver1.observe(swaggerUIElement, { childList: true, subtree: true });
+  mutationObserver.observe(swaggerUIElement, { childList: true, subtree: true });
 };
 
 if (swaggerUIElement) {
