@@ -1,4 +1,6 @@
-const swaggerUIElement = document.getElementById('swagger-ui');
+const hostname = location.hostname;
+const id = hostname === 'editor.swagger.io' ? 'swagger-editor' : 'swagger-ui';
+const swaggerElement = document.getElementById(id);
 
 const getHostByUrl = url => {
   const a = document.createElement('a');
@@ -30,9 +32,9 @@ const init = () => {
     }
   });
 
-  mutationObserver.observe(swaggerUIElement, { childList: true, subtree: true });
+  mutationObserver.observe(swaggerElement, { childList: true, subtree: true });
 };
 
-if (swaggerUIElement) {
+if (swaggerElement) {
   init();
 }
