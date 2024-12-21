@@ -21,16 +21,16 @@ const main = selectElement => {
 };
 
 const init = () => {
-  const mutationObserver1 = new MutationObserver(() => {
+  const mutationObserver = new MutationObserver(() => {
     const selectElement = document.querySelector('.servers select');
 
     if (selectElement) {
       main(selectElement);
-      mutationObserver1.disconnect();
+      mutationObserver.disconnect();
     }
   });
 
-  mutationObserver1.observe(swaggerUIElement, { childList: true, subtree: true });
+  mutationObserver.observe(swaggerUIElement, { childList: true, subtree: true });
 };
 
 if (swaggerUIElement) {
